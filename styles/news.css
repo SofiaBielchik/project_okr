@@ -1,0 +1,66 @@
+body{
+    background-color: #fcbfbf;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #0c0202;
+    line-height: 1.6;
+}
+
+
+#news {
+    font-size: 25px;
+    color: #2d0101;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: left;
+}
+
+#news a {
+    color: #007bff; 
+    text-decoration: none; 
+   
+}
+
+unique{
+    font-size: 25px;
+    text-align: center;
+    color: #b20707;
+    font-style: Impact;
+}
+
+ol {
+    list-style-type: decimal; 
+    color: #6c7783; 
+    font-family: 'Helvetica', sans-serif; 
+}
+
+table {
+    width: 50%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+colgroup col {
+    background-color: lightblue;
+}
+
+colgroup col:nth-child(2) {
+    background-color: lightgreen;
+}
+
+th {
+    background-color: #007bff; 
+    color: white; 
+}
+
+
+
+
+
+
+
+
