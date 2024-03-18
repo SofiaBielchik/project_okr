@@ -1,0 +1,147 @@
+body {
+    background-color: #f0f0f0; 
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    color: #340202;
+    line-height: 1.6;
+}
+
+h1{
+    font-style: italic !important;
+    font-size: 25px !important;
+    color: #510303 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+ 
+img {
+   width: 100%;
+   height: 300px;
+   opacity: 0.7;
+}
+
+.poshta{
+    font-size: 20px;
+    color:hsl(10, 93%, 62%);
+    text-align: center;
+    font-style: Tahoma ;
+    font-weight: bold
+}
+
+#news {
+    font-size: 25px;
+    color: #2d0101;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: left;
+}
+
+#news a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+#unique{
+    font-size: 25px;
+    text-align: center;
+    color: #b20707;
+    font-style: Impact;
+}
+
+ul {
+    list-style-type: square; 
+    margin: 15px 0; 
+    padding-left: 20px;
+    color: #750360; 
+    font-family: 'Times New Roman', Times, serif; 
+    background-color: #f5ecec; 
+}
+
+dl {
+    margin: 20px 0; 
+}
+
+dt {
+    font-weight: bold; 
+}
+
+dd {
+    color: #8d8f8d; 
+}
+
+
+#navigator {
+    margin-top: 20px; 
+    width: 100%;
+}
+
+#navigator td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+#unique{
+    font-size: 25px;
+    text-align: center;
+    color: #b20707;
+    font-style: Impact;
+}
+
+ol {
+    list-style-type: decimal; 
+    color: #6c7783; 
+    font-family: 'Helvetica', sans-serif; 
+}
+
+#win {
+    width: 50%;
+}
+
+#win th, #win td {
+    padding: 10px;
+    text-align: center;
+    border: 3px solid #141313;
+}
+
+#win colgroup col {
+    background-color: lightblue;
+}
+
+#win colgroup col:nth-child(2) {
+    background-color: lightgreen;
+}
+
+#win th {
+    background-color: #007bff; 
+    color: white; 
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 3px solid #dbd4d4;
+}
+
+thead th {
+    background-color: #c8d6c9;
+    color: white;
+}
+
+tbody img {
+    width: auto;
+    height: 200px;
+}
