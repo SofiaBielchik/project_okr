@@ -18,8 +18,8 @@
 </style>
 <script>
     function userDialog() {
-        var name = prompt("Будь ласка, введіть ваше ім'я:", "");
-        var age = prompt("Скільки вам років?", "");
+        let name = prompt("Будь ласка, введіть ваше ім'я:", "");
+        let age = prompt("Скільки вам років?", "");
         
         alert("Привіт, " + name + "! Вам " + age + " років.");
     }
@@ -36,7 +36,7 @@
 
     <script>
     function replaceElement() {
-        var element = document.getElementById("text");
+        let element = document.getElementById("text");
         element.textContent = 'Наш оберіг';
     }
     </script>
@@ -74,14 +74,14 @@
  
 <div id="example">Це приклад outer.</div>
 <script>
-    var element = document.getElementById("example");
+    let element = document.getElementById("example");
 element.outerHTML = '<p>Новий елемент</p>';  
  </script>
 
-<div id="nod">Hello, <span>world!</span></div>
+<div id="textExample">Привіт, <span>світе!</span></div>
 <script>
-  var textNode = document.getElementById("nod").childNodes[0];
-  console.log(textNode.nodeValue); 
+  let textNode = document.getElementById("textExample").firstChild;
+  console.log(textNode.data);   
 </script>
 
 

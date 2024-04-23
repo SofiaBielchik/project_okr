@@ -29,7 +29,7 @@ showDeveloperInfo('Бєльчик', 'Софія');
  <div id="contactInfo" class="poshta"> <p>Привіт! Зв'язатися з нами можна, зателефонувавши на номер +380668949670 або напиши нам на  <a href="mailto:bielchik.sofia@lll.kpi.ua">пошту.</a>
     </p></div>
     <button onclick="updateContactInfo()">Змінити контактну інформацію</button>
-    <button onclick="showCurrentHTML()">Показати поточний HTML</button>
+   
 
     <h2>Хочемо більше познайомитися з вами, аби бути ближче!</h2>
     <p class="af">Декілька фактів про власників сайту:</p>
@@ -41,10 +41,7 @@ showDeveloperInfo('Бєльчик', 'Софія');
     <button onclick="removeAnimals()">Видалити факт про тварин</button>
     
     <script>
-        function removeEducation() {
-            const educationElement = document.getElementById("education");
-            educationElement.remove();
-        }
+      
         function removeAnimals() {
             const animalsElement = document.getElementById("animals");
             animalsElement.remove();

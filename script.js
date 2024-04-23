@@ -31,7 +31,7 @@ while (i < 5) {
 
 // Функція, яка змінює текст опису проєкту гетелемент
 function updateProjectDescription(newDescription) {
-    var descriptionElement = document.getElementById("projectDescription").querySelector("dd");
+    let descriptionElement = document.getElementById("projectDescription").querySelector("dd");
     descriptionElement.textContent = newDescription;
 }
 
@@ -39,11 +39,6 @@ updateProjectDescription("Новий опис, який робить читан�
 
 //inner
 function updateContactInfo() {
-    var contactDiv = document.getElementById("contactInfo");
+    let contactDiv = document.getElementById("contactInfo");
     contactDiv.innerHTML = '<p>Привіт! Тепер зв\'язатися з нами можна новим способом: зателефонувавши на номер +380998877665 </p>';
-}
-
-function showCurrentHTML() {
-    var contactDiv = document.getElementById("contactInfo");
-    alert(contactDiv.innerHTML);
 }
