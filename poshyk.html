@@ -16,11 +16,31 @@
         float:left;
     }
 </style>
+<script>
+    function userDialog() {
+        var name = prompt("Будь ласка, введіть ваше ім'я:", "");
+        var age = prompt("Скільки вам років?", "");
+        
+        alert("Привіт, " + name + "! Вам " + age + " років.");
+    }
+    
+    userDialog();
+    </script>
 
-<p><b>Наший символ</b> <b>пані-сова</b></p>
+<div id="text">Наший символ <b>пані-сова</b>
+    <button onclick="replaceElement()">Замінити текст</button></div>
 
-<div id="fl"><a href="images/soval.jpg" target="_blank">
-    <img src="images/soval.jpg" alt="Сова" width="500"; height="400"></a></div>
+    <div id="fl"><a href="images/soval.jpg" target="_blank">
+        <img src="images/soval.jpg" alt="Сова" width="500" height="400"></a>
+    </div>
+
+    <script>
+    function replaceElement() {
+        var element = document.getElementById("text");
+        element.textContent = 'Наш оберіг';
+    }
+    </script>
+
 
 
 <h2 style="font-size: 24px; color: #afb2b6; font-weight: bold; text-align: center;">Топ найкращих авторів на думку наших читачів</h2>
@@ -52,6 +72,19 @@
     </tbody>
 </table>
  
+<div id="example">Це приклад outer.</div>
+<script>
+    var element = document.getElementById("example");
+element.outerHTML = '<p>Новий елемент</p>';  
+ </script>
+
+<div id="nod">Hello, <span>world!</span></div>
+<script>
+  var textNode = document.getElementById("nod").childNodes[0];
+  console.log(textNode.nodeValue); 
+</script>
+
+
     <p><a href="index.html">Повернутися на головну сторінку </a></p>
 </body>
 </html>

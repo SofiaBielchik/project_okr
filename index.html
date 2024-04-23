@@ -6,13 +6,38 @@
     <title>Головна сторінка</title>  
     <meta name="author" content="Бєльчик Софія ІС-21" />
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
+<body>
+<script>
+    alert("Ласкаво просимо до нашої сторінки!");
+</script>
 
-    <h1>Вітаємо, шановний читачу!</h1>
+<script>
+    document.write("<h1>Вітаємо на нашому сайті!</h1>");
+</script>
+   
+   
 
-    <span>Раді представити тобі нашу онлайн-бібліотеку. Сподіваємося, ти знайдеш твір, який тобі потрібен.</span>
-<span>(Якщо ні, то просимо тобі написати в нашу службу підтримки <a href="aboutus.html" >сюди</a>.)</span>
+<div id="greeting">Раді представити тобі нашу онлайн-бібліотеку. Сподіваємося, ти знайдеш твір, який тобі потрібен.</div>
 
+    <script>
+        const greetingElement = document.getElementById("greeting");
+      
+        greetingElement.append(" Гарного дня!");
+
+        greetingElement.prepend("Вітаю! ");
+      </script>
+
+<div id="aftergr">(Якщо ні, то просимо тобі написати в нашу службу підтримки <a href="aboutus.html" >сюди</a>.)</div>
+
+<script>
+    const divElement = document.getElementById("aftergr");
+  
+    const additionalText = document.createTextNode(" Дякуємо, що ви з нами!");
+  
+    divElement.after(additionalText);
+  </script>
      
     <img src="images/books.jpg" alt="Книги" width="600" height="300";>
 
@@ -28,6 +53,37 @@
       </div>
 
     <p><iframe src="https://www.medtechnopark.com.ua/?gad_source=1&gclid=CjwKCAiA_5WvBhBAEiwAZtCU7_z-_gi-LPFzt2zr_71LYabf4AQWzumHi63mDKoTtgtY1sCizl6evxoCpogQAvD_BwE" width="1500" height="200" frameborder="0" allowfullscreen></iframe></p>
+   
+    
 
+   <script>
+         document.body.style.background = 'red';
+        setTimeout(() => {
+            document.body.style.background = '';
+        }, 30000);
+
+        // Змінити колір тексту усіх посилань у навігаційному меню
+window.onload = function() {
+    var navigatorLinks = document.querySelectorAll("#navigator a");
+    for (var i = 0; i < navigatorLinks.length; i++) {
+        navigatorLinks[i].style.color = "red";
+    }
+};
+    </script>
+
+<div>
+    <p id="oldParagraph">Цей параграф буде замінений методом .</p>
+</div>
+
+<script>
+    const oldParagraph = document.getElementById("oldParagraph");
+
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = "Героям слава!";
+
+    oldParagraph.replaceWith(newParagraph);
+</script>
+
+    
 </body>
 </html>

@@ -6,6 +6,7 @@
     <title>Про нас</title>
     <meta name="author" content="Бєльчик Софія ІС-21" />
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <style>
    div {
@@ -13,25 +14,64 @@
  }
 </style>
 
- <div class="poshta"> <p>Привіт! Зв'язатися з нами можна, зателефонувавши на номер +380668949670 або напиши нам на  <a href="mailto:bielchik.sofia@lll.kpi.ua">пошту.</a>
-    </p></div>
-    
-  
-   
-        <h2>Хочемо більше познайомитися з вами, аби бути ближче!</h2>
-        <p class="af" >Декілька фактів про власників сайту:</p>
-    <ul class="custom-list">
-        <li>Ми з міста Суми.</li>
-        <li>Навчаємося в університеті ім. І.Сікорського.</li>
-        <li>Любимо тварин!</li>
-   </ul>
+<script>
+function showDeveloperInfo(surname, name, position = 'Розробник') {
+    console.log(`Прізвище: ${surname}`);
+    console.log(`Ім'я: ${name}`);
+    console.log(`Посада: ${position}`);
+}
 
-    <dl>
-        <dt><b>Для чого створений наш проєкт?</b></dt>
-        <dd>
-          Аби заохитити більше людей читати. А також зробити для них це максимально зручно і приємно.
-        </dd>
-     </dl>
+showDeveloperInfo('Бєльчик', 'Софія');
+</script>
+
+<script>prompt("Привіт!", "Введіть щось");</script>
+
+ <div id="contactInfo" class="poshta"> <p>Привіт! Зв'язатися з нами можна, зателефонувавши на номер +380668949670 або напиши нам на  <a href="mailto:bielchik.sofia@lll.kpi.ua">пошту.</a>
+    </p></div>
+    <button onclick="updateContactInfo()">Змінити контактну інформацію</button>
+    <button onclick="showCurrentHTML()">Показати поточний HTML</button>
+
+    <h2>Хочемо більше познайомитися з вами, аби бути ближче!</h2>
+    <p class="af">Декілька фактів про власників сайту:</p>
+    <ul class="custom-list">
+        <li id="location">Ми з міста Суми.</li>
+        <li id="education">Навчаємося в університеті ім. І.Сікорського.</li>
+        <li id="animals">Любимо тварин!</li>
+    </ul>
+    <button onclick="removeAnimals()">Видалити факт про тварин</button>
+    
+    <script>
+        function removeEducation() {
+            const educationElement = document.getElementById("education");
+            educationElement.remove();
+        }
+        function removeAnimals() {
+            const animalsElement = document.getElementById("animals");
+            animalsElement.remove();
+        }
+    </script>
+    
+    
+
+
+   <dl id="projectDescription">
+    <dt><b>Для чого створений наш проєкт?</b></dt>
+    <dd>
+      Аби заохитити більше людей читати. А також зробити для них це максимально зручно і приємно.
+    </dd>
+</dl>
+
+
+<div id="newbutton"></div>
+
+<script>
+  let buttonText = document.createTextNode("Натисни мене");
+
+   let button = document.createElement("button");
+
+  button.appendChild(buttonText);
+  document.getElementById("newbutton").appendChild(button);
+</script>
 
     <p><a href="index.html">Повернутися на головну сторінку </a></p>
 </body>
