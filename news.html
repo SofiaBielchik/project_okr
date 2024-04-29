@@ -7,32 +7,45 @@
     <meta name="author" content="Бєльчик Софія ІС-21" />
     <link rel="stylesheet" href="style.css">
 </head>
-<script>
-let isBoss= confirm("У тебе все добре?");
-alert(isBoss);
-let message;
-message ='Слава Україні!';
-alert(message);
 
-// Перенаправлення на іншу сторінку
-function redirectTo(url) {
-    location.href = url;
-}
-redirectTo("https://ruhednosti.org/donat-na-zsu/?utm_source=google&utm_medium=cpc&utm_campaign=PerformanceMax/Ukraine/Zbori-April-May&utm_term=&utm_content=&gad_source=1&gclid=Cj0KCQjwlZixBhCoARIsAIC745Dk6_dpC7SjxQ9s8s6uUe5WxiTZeWAe3CAH1XUBx6vsWLkcgcpSMnYaAp7lEALw_wcB");
-
-</script>
 <div id="news">
     Радимо прочитати статтю про чарівну Лесю Українку <a href="https://uk.wikipedia.org/wiki/%D0%9B%D0%B5%D1%81%D1%8F_%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%BA%D0%B0">тут.</a>
 </div>
 <div>Дякуємо!</div>
-    
+ 
+
 <div id="unique"><p>Привіт! Станом на 26.02.24</p></div>
-<p><b>Найкращі читачі цього місяця:</b></p>
-<ol>
-    <li>Крамаренко Дмитро</li>
-    <li>Єфразіна Олена</li>
-    <li>Ковальов Олександр</li>
-</ol>
+    <p><b>Найкращі читачі цього місяця:</b></p>
+    <ol id="readersList">
+        <li>Крамаренко Дмитро</li>
+        <li>Єфразіна Олена</li>
+        <li>Ковальов Олександр</li>
+    </ol>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const readersList = document.getElementById('readersList');
+    const readerItems = document.querySelectorAll('#readersList li');
+
+    function logName() {
+        console.log(`Читач: ${this.innerText}`);
+    }
+
+    function changeColor() {
+        this.style.color = 'blue';
+    }
+
+    function underlineName() {
+        this.style.textDecoration = 'underline';
+    }
+
+    readerItems.forEach(item => {
+        item.addEventListener('click', logName);
+        item.addEventListener('click', changeColor);
+        item.addEventListener('click', underlineName);
+    });
+});
+</script>
 
 <table id="win">
     <colgroup>
@@ -61,7 +74,24 @@ redirectTo("https://ruhednosti.org/donat-na-zsu/?utm_source=google&utm_medium=cp
         <td>Петренко Костя</td>
     </tr>
 </table>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const table = document.getElementById('win');
+        const rows = table.querySelectorAll('tr');
+    
+        const eventHandlerObject = {
+            handleEvent: function(event) {
+                console.log('Event triggered by:', event.currentTarget);
+                event.currentTarget.style.backgroundColor = '#f0f0f0'; // додаємо візуальний ефект на клік
+            }
+        };
+    
+        rows.forEach(row => {
+            row.addEventListener('click', eventHandlerObject);
+        });
+    });
+    </script>
+    
 <style>
 
 .link:link, .link:visited{
@@ -79,10 +109,13 @@ redirectTo("https://ruhednosti.org/donat-na-zsu/?utm_source=google&utm_medium=cp
 
 </style>
 
-<p><a class="link"  href="aboutus.html">Про нас</a></p>
-<p><a class="link" href="poshyk.html">Пошук</a></p>
-<p><a class="link" href="index.html">Повернутися на головну сторінку </a></p>
+<button onclick="handleClick()">До зустрічі!</button>
 
+<script>
+    function handleClick() {
+        alert('Кнопка натиснута через атрибут!');
+    }
+</script>
 
 </body>
 </html>

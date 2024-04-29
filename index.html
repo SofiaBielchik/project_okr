@@ -17,7 +17,6 @@
     document.write("<h1>Вітаємо на нашому сайті!</h1>");
 </script>
    
-   
 
 <div id="greeting">Раді представити тобі нашу онлайн-бібліотеку. Сподіваємося, ти знайдеш твір, який тобі потрібен.</div>
 
@@ -41,48 +40,69 @@
      
     <img src="images/books.jpg" alt="Книги" width="600" height="300";>
 
+
+    <script>
+        document.getElementById('navigator').addEventListener('click', function(event) {
+            // Перевірити, чи клік було зроблено по елементу з атрибутом data-action
+            var action = event.target.getAttribute('data-action');
+            if (action) {
+                handleAction(action, event);
+            }
+        });
+        
+        function handleAction(action, event) {
+            event.preventDefault(); // Зупинити стандартну обробку подій
+            switch (action) {
+                case 'aboutUs':
+                    console.log("Відкрити сторінку 'Про нас'");
+                    window.location.href = event.target.href;
+                    break;
+                case 'news':
+                    console.log("Відкрити сторінку 'Новини'");
+                    window.location.href = event.target.href;
+                    break;
+                case 'search':
+                    console.log("Перейти до 'Пошуку'");
+                    window.location.href = event.target.href;
+                    break;
+                case 'home':
+                    console.log("Відкрити 'Головну сторінку'");
+                    window.location.href = event.target.href;
+                    break;
+                default:
+                    console.log("Не визначена дія");
+            }
+        }
+        </script>        
+
     <div id="navigator">
         <table>
-              <tr>
-                  <td><a href="aboutus.html">Про нас</a></td>
-                  <td><a href="news.html">Новини</a></td>
-                  <td><a href="poshyk.html">Пошук</a></td>
-                  <td><a href="#section">Головна сторінка</a></td>
-              </tr>
-          </table>
-      </div>
+            <tr>
+                <td><a href="aboutus.html" data-action="aboutUs">Про нас</a></td>
+                <td><a href="news.html" data-action="news">Новини</a></td>
+                <td><a href="poshyk.html" data-action="search">Пошук</a></td>
+                <td><a href="#section" data-action="home">Головна сторінка</a></td>
+            </tr>
+        </table>
+    </div>
 
-    <p><iframe src="https://www.medtechnopark.com.ua/?gad_source=1&gclid=CjwKCAiA_5WvBhBAEiwAZtCU7_z-_gi-LPFzt2zr_71LYabf4AQWzumHi63mDKoTtgtY1sCizl6evxoCpogQAvD_BwE" width="1500" height="200" frameborder="0" allowfullscreen></iframe></p>
-   
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const button = document.getElementById('clickMeButton');
+        const message = document.getElementById('message');
     
-
-   <script>
-         document.body.style.background = 'red';
-        setTimeout(() => {
-            document.body.style.background = '';
-        }, 30000);
-
-        // Змінити колір тексту усіх посилань у навігаційному меню
-window.onload = function() {
-    let navigatorLinks = document.querySelectorAll("#navigator a");
-    for (var i = 0; i < navigatorLinks.length; i++) {
-        navigatorLinks[i].style.color = "red";
-    }
-};
-    </script>
-
-<div>
-    <p id="oldParagraph">Цей параграф буде замінений методом .</p>
-</div>
-
-<script>
-    const oldParagraph = document.getElementById("oldParagraph");
-
-    const newParagraph = document.createElement("p");
-    newParagraph.textContent = "Героям слава!";
-
-    oldParagraph.replaceWith(newParagraph);
+        button.addEventListener('click', function() {
+            message.textContent = 'Героям Слава!';
+        });
+    });
 </script>
+
+    <button id="clickMeButton">Слава Україні!</button>
+    <p id="message"></p>
+
+    
+    <p><iframe src="https://www.medtechnopark.com.ua/?gad_source=1&gclid=CjwKCAiA_5WvBhBAEiwAZtCU7_z-_gi-LPFzt2zr_71LYabf4AQWzumHi63mDKoTtgtY1sCizl6evxoCpogQAvD_BwE" width="1500" height="200" frameborder="0" allowfullscreen></iframe></p>
+
 
     
 </body>

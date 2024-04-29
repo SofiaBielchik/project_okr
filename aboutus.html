@@ -28,36 +28,75 @@ showDeveloperInfo('Бєльчик', 'Софія');
 
  <div id="contactInfo" class="poshta"> <p>Привіт! Зв'язатися з нами можна, зателефонувавши на номер +380668949670 або напиши нам на  <a href="mailto:bielchik.sofia@lll.kpi.ua">пошту.</a>
     </p></div>
-    <button onclick="updateContactInfo()">Змінити контактну інформацію</button>
-   
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mailLink = document.querySelector('#contactInfo a[href^="mailto:"]'); 
+    
+        const mailHandler = {
+            handleEvent: function(event) {
+                console.log('Посилання на пошту натиснуто');
+                event.preventDefault(); // Запобігаємо стандартній поведінці браузера
+            }
+        };
+    
+        
+        mailLink.addEventListener('click', mailHandler);
+    
+        setTimeout(() => {
+            mailLink.removeEventListener('click', mailHandler);
+            console.log('Обробник події видалено');
+        }, 10000); 
+    });
+</script>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const list = document.querySelector('.custom-list'); // Отримуємо доступ до списку
+        
+          list.onclick = function(event) {
+            if (event.target.tagName === 'LI') { // Перевіряємо, чи клік був здійснений на елементі LI
+              if (event.target.classList.contains('highlight')) {
+                event.target.classList.remove('highlight'); // Вимикаємо підсвічування, якщо воно вже було
+              } else {
+                event.target.classList.add('highlight'); // Вмикаємо підсвічування для клікнутого елемента
+              }
+            }
+          };
+        });
+        </script>
     <h2>Хочемо більше познайомитися з вами, аби бути ближче!</h2>
     <p class="af">Декілька фактів про власників сайту:</p>
     <ul class="custom-list">
-        <li id="location">Ми з міста Суми.</li>
-        <li id="education">Навчаємося в університеті ім. І.Сікорського.</li>
-        <li id="animals">Любимо тварин!</li>
+        <li>Ми з міста Суми.</li>
+        <li>Навчаємося в університеті ім. І.Сікорського.</li>
+        <li>Любимо тварин!</li>
     </ul>
-    <button onclick="removeAnimals()">Видалити факт про тварин</button>
-    
+ 
     <script>
-      
-        function removeAnimals() {
-            const animalsElement = document.getElementById("animals");
-            animalsElement.remove();
-        }
-    </script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const toggle = document.querySelector('#projectDescription dt b[data-behavior="toggleAnswer"]');
+          const answer = document.querySelector('#projectDescription dd'); 
+        
+          toggle.addEventListener('click', function() {
+            if (answer.style.display === 'none' || answer.style.display === '') {
+              answer.style.display = 'block';
+            } else {
+              answer.style.display = 'none';
+            }
+          });
+        });
+        </script>
+        
+    <dl id="projectDescription">
+        <dt><b data-behavior="toggleAnswer">Для чого створений наш проєкт?</b></dt>
+        <dd style="display: none;">
+          Аби заохитити більше людей читати. А також зробити для них це максимально зручно і приємно.
+        </dd>
+    </dl>
     
-    
-
-
-   <dl id="projectDescription">
-    <dt><b>Для чого створений наш проєкт?</b></dt>
-    <dd>
-      Аби заохитити більше людей читати. А також зробити для них це максимально зручно і приємно.
-    </dd>
-</dl>
-
+   
+        
 
 <div id="newbutton"></div>
 

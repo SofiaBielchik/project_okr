@@ -22,6 +22,10 @@ h2 + p {
        font-style: italic;
   }
 
+  #projectDescription dt b:hover {
+    cursor: pointer;
+    color: blue;
+  }
 
 img {
    width: 100%;
@@ -56,7 +60,9 @@ img {
 }
 
 .custom-list {
-    list-style-type: none; 
+    .highlight {
+        background-color: #0d55db; 
+      }
 }
 .custom-list li:before {
     content: "~"; 
