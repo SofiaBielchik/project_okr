@@ -50,21 +50,7 @@ showDeveloperInfo('Бєльчик', 'Софія');
     });
 </script>
    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const list = document.querySelector('.custom-list'); // Отримуємо доступ до списку
-        
-          list.onclick = function(event) {
-            if (event.target.tagName === 'LI') { // Перевіряємо, чи клік був здійснений на елементі LI
-              if (event.target.classList.contains('highlight')) {
-                event.target.classList.remove('highlight'); // Вимикаємо підсвічування, якщо воно вже було
-              } else {
-                event.target.classList.add('highlight'); // Вмикаємо підсвічування для клікнутого елемента
-              }
-            }
-          };
-        });
-        </script>
+  
     <h2>Хочемо більше познайомитися з вами, аби бути ближче!</h2>
     <p class="af">Декілька фактів про власників сайту:</p>
     <ul class="custom-list">
@@ -72,42 +58,43 @@ showDeveloperInfo('Бєльчик', 'Софія');
         <li>Навчаємося в університеті ім. І.Сікорського.</li>
         <li>Любимо тварин!</li>
     </ul>
- 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const toggle = document.querySelector('#projectDescription dt b[data-behavior="toggleAnswer"]');
-          const answer = document.querySelector('#projectDescription dd'); 
-        
-          toggle.addEventListener('click', function() {
-            if (answer.style.display === 'none' || answer.style.display === '') {
-              answer.style.display = 'block';
+      document.addEventListener('DOMContentLoaded', function() {
+        const list = document.querySelector('.custom-list'); 
+      
+        list.onclick = function(event) {
+          if (event.target.tagName === 'LI') { 
+            if (event.target.classList.contains('highlight')) {
+              event.target.classList.remove('highlight'); 
             } else {
-              answer.style.display = 'none';
+              event.target.classList.add('highlight'); 
             }
-          });
-        });
-        </script>
-        
-    <dl id="projectDescription">
-        <dt><b data-behavior="toggleAnswer">Для чого створений наш проєкт?</b></dt>
-        <dd style="display: none;">
-          Аби заохитити більше людей читати. А також зробити для них це максимально зручно і приємно.
-        </dd>
-    </dl>
-    
-   
-        
+          }
+        };
+      });
+      </script>
 
-<div id="newbutton"></div>
+        
+<dl id="projectDescription">
+  <dt data-behavior="toggleDescription"><b>Для чого створений наш проєкт?</b></dt>
+  <dd data-behavior="descriptionContent" style="display: none;">
+      Аби заохити більше людей читати. А також зробити для них це максимально зручно і приємно.
+  </dd>
+</dl>
 
 <script>
-  let buttonText = document.createTextNode("Натисни мене");
+document.addEventListener('DOMContentLoaded', function() {
+  var descriptionToggle = document.querySelector('[data-behavior="toggleDescription"]');
+  var descriptionContent = document.querySelector('[data-behavior="descriptionContent"]');
 
-   let button = document.createElement("button");
-
-  button.appendChild(buttonText);
-  document.getElementById("newbutton").appendChild(button);
+  descriptionToggle.addEventListener('click', function() {
+      var isDisplayed = descriptionContent.style.display === 'block';
+      descriptionContent.style.display = isDisplayed ? 'none' : 'block';
+  });
+});
 </script>
+
+      
 
     <p><a href="index.html">Повернутися на головну сторінку </a></p>
 </body>

@@ -141,12 +141,9 @@ document.getElementById('poshuktb').addEventListener('mouseout', function(event)
 <button id="myButton">До зустрічі!</button>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const button = document.getElementById('myButton');
-            button.onclick = function() {
-                alert('Кнопка натиснута через властивість!');
-            };
-        });
+       document.getElementById('myButton').onclick = function() {
+    alert('Клікнуто на кнопку через властивість!');
+}
     </script>
 
     <p><a href="index.html">Повернутися на головну сторінку </a></p>

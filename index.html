@@ -40,41 +40,6 @@
      
     <img src="images/books.jpg" alt="Книги" width="600" height="300";>
 
-
-    <script>
-        document.getElementById('navigator').addEventListener('click', function(event) {
-            // Перевірити, чи клік було зроблено по елементу з атрибутом data-action
-            var action = event.target.getAttribute('data-action');
-            if (action) {
-                handleAction(action, event);
-            }
-        });
-        
-        function handleAction(action, event) {
-            event.preventDefault(); // Зупинити стандартну обробку подій
-            switch (action) {
-                case 'aboutUs':
-                    console.log("Відкрити сторінку 'Про нас'");
-                    window.location.href = event.target.href;
-                    break;
-                case 'news':
-                    console.log("Відкрити сторінку 'Новини'");
-                    window.location.href = event.target.href;
-                    break;
-                case 'search':
-                    console.log("Перейти до 'Пошуку'");
-                    window.location.href = event.target.href;
-                    break;
-                case 'home':
-                    console.log("Відкрити 'Головну сторінку'");
-                    window.location.href = event.target.href;
-                    break;
-                default:
-                    console.log("Не визначена дія");
-            }
-        }
-        </script>        
-
     <div id="navigator">
         <table>
             <tr>
@@ -85,7 +50,38 @@
             </tr>
         </table>
     </div>
+    
+    <script>
+        const navigator = document.getElementById('navigator');
+    
+        navigator.addEventListener('click', function(event) {
+            if (event.target.tagName === 'A') {
+                const action = event.target.dataset.action;
+                switch (action) {
+                    case 'aboutUs':
+                        console.log('Ви вибрали Про нас');
+                        break;
+                    case 'news':
+                        console.log('Ви вибрали Новини');
+                        break;
+                    case 'search':
+                        console.log('Ви вибрали Пошук');
+                        break;
+                    case 'home':
+                        console.log('Ви вибрали Головна сторінка');
+                        break;
+                    default:
+                        console.log('Невідома дія');
+                }
+            }
+        });
+    </script>
+    
+    
+    
 
+<button id="clickMeButton">Слава Україні!</button>
+    <p id="message"></p>
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const button = document.getElementById('clickMeButton');
@@ -97,8 +93,7 @@
     });
 </script>
 
-    <button id="clickMeButton">Слава Україні!</button>
-    <p id="message"></p>
+    
 
     
     <p><iframe src="https://www.medtechnopark.com.ua/?gad_source=1&gclid=CjwKCAiA_5WvBhBAEiwAZtCU7_z-_gi-LPFzt2zr_71LYabf4AQWzumHi63mDKoTtgtY1sCizl6evxoCpogQAvD_BwE" width="1500" height="200" frameborder="0" allowfullscreen></iframe></p>
