@@ -14,16 +14,6 @@
     cursor: pointer;
   }
 </style>
-<script>
-    function userDialog() {
-        let name = prompt("Будь ласка, введіть ваше ім'я:", "");
-        let age = prompt("Скільки вам років?", "");
-        
-        alert("Привіт, " + name + "! Вам " + age + " років.");
-    }
-    
-    userDialog();
-    </script>
 
 <div id="text">Наш символ <b>пані-сова</b></div>
     
@@ -81,16 +71,10 @@
 
 <h2 style="font-size: 24px; color: #afb2b6; font-weight: bold; text-align: center;">Топ найкращих авторів на думку наших читачів</h2>
 <style>
-    /* Базовий стиль для елементів таблиці */
-    #poshuktb th, #poshuktb td {
-        padding: 10px;
-        border: 1px solid black;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    /* Стиль для наведення курсору */
+    
     .highlight {
-        background-color: #483e04;
-        color: #000;
+        background-color: #a6c9d6;
+        
     }
 </style>
 
@@ -122,29 +106,26 @@
 </table>
 
 <script>
-    document.getElementById('poshuktb').addEventListener('mouseover', function(event) {
-    let target = event.target.closest('td, th'); // Знаходимо найближчий батьківський td або th
-    if (target) {
-        target.classList.add('highlight'); 
-    }
-});
+    const table = document.getElementById('poshuktb');
 
-document.getElementById('poshuktb').addEventListener('mouseout', function(event) {
-    let target = event.target.closest('td, th'); 
-    if (target) {
-        target.classList.remove('highlight'); 
-    }
-});
+    table.addEventListener('mouseover', function(event) {
+        let target = event.target.closest('td, th');
+        if (target && !target.classList.contains('highlight')) {
+            target.classList.add('highlight');
+        }
+    });
 
+    table.addEventListener('mouseout', function(event) {
+        let target = event.target.closest('td, th');
+        let relatedTarget = event.relatedTarget;
+        // Перевірка, що relatedTarget не є дочірнім елементом target
+        if (target && (!relatedTarget || !target.contains(relatedTarget))) {
+            target.classList.remove('highlight');
+        }
+    });
 </script>
 
-<button id="myButton">До зустрічі!</button>
 
-    <script>
-       document.getElementById('myButton').onclick = function() {
-    alert('Клікнуто на кнопку через властивість!');
-}
-    </script>
 
     <p><a href="index.html">Повернутися на головну сторінку </a></p>
 </body>
